@@ -8,6 +8,7 @@ public class SpawningLevel : MonoBehaviour
 {
     public GameManager gameManager;
     public AudioManager audioManager;
+    public GamePanelController gamePanelController;
     public int slotCount; // Slot menu transform to hold picked objects
     public GameObject slotPrefab;
     public GameObject inventoryPanel;
@@ -19,6 +20,9 @@ public class SpawningLevel : MonoBehaviour
     private int tileToSpawn;
     private int remainingTiles;
     private bool allowTouch;
+
+    [SerializeField]
+    private float remainTime;
 
     private void Start()
     {
@@ -32,7 +36,8 @@ public class SpawningLevel : MonoBehaviour
             audioManager = gameManager.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
             audioManager.ChangeBackGroundMusic("bg-2");
         }
-
+        
+        remainTime = gameManager.selectedLevel.countDown;
 
         CreateTiles();
         CreateInventorySlots();
@@ -92,8 +97,12 @@ public class SpawningLevel : MonoBehaviour
                 }
             }
         }
+        if(gameManager.timer <= 0)
+        {
+            Debug.LogError("Game Over! out of remain time");
+            panelController.GetComponent<GamePanelController>().OnGameOver();
+        }
         
-
     }
 
     private bool IsInventoryFull ()

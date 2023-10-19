@@ -7,6 +7,7 @@ public class LevelSO : ScriptableObject
 {
     public int levelIndex;
     public string levelName;
+    public int countDown;
 
     public List<TileData> levelTileDatas;
 

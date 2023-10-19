@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -27,7 +26,7 @@ public class ButtonLevelHandler : MonoBehaviour
             menuPanelController.audioManager.PlaySoundUI("ui-eventUp01");
             Debug.Log("Selected level: " + selectedLevel.name);
             GameManager.instance.selectedLevel = selectedLevel;
-            GameManager.instance.LoadScene("PlayScene");
+            GameManager.instance.LoadScene("PlayScene", true);
         }
         else
         {

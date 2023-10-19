@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelIndex: 0
   levelName: 1-1
+  countDown: 90
   levelTileDatas:
   - tileIndex: 0
     prefab: {fileID: 271234327234322469, guid: 940002d6abc59484aa523a9249085583, type: 3}

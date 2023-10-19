@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GamePanelController : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class GamePanelController : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject CompletedPanel;
     public GameObject InGamePanel;
+
+    [SerializeField]
+    private TextMeshProUGUI timerText;
+    public float remainTime { get; private set; }
     
     void Start ()
     {
@@ -18,6 +23,7 @@ public class GamePanelController : MonoBehaviour
         {
             gameManager = GameManager.instance;
             audioManager = gameManager.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
+            remainTime = gameManager.selectedLevel.countDown;
         }
     }
 
@@ -35,7 +41,7 @@ public class GamePanelController : MonoBehaviour
 
     public void OnQuitbuttonClick()
     {
-        gameManager.LoadScene("Menu");
+        gameManager.LoadScene("Menu", false);
         audioManager.ChangeBackGroundMusic("bg-1");
         audioManager.PlaySoundUI("ui-eventUp03");
     }
@@ -72,11 +78,27 @@ public class GamePanelController : MonoBehaviour
             LevelSO nextLevel =  gameManager.levelLists[gameManager.selectedLevel.levelIndex + 1];
             gameManager.selectedLevel = nextLevel;
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameManager.instance.LoadScene("PlayScene", true);
 
             gameManager.ResumeGame();
         }
 
+    }
+
+    private void Update()
+    {
+        remainTime = gameManager.timer;
+
+        if(remainTime < 0)
+        {
+            remainTime = 0;
+        }
+        
+        int seconds = Mathf.FloorToInt(remainTime % 60);
+        int minutes = Mathf.FloorToInt(remainTime / 60);
+
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        
     }
 
 }
