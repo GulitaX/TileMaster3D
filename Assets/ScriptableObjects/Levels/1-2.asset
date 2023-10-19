@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f0c70f9cf353141adccfbf7e216b91, type: 3}
+  m_Name: 1-2
+  m_EditorClassIdentifier: 
+  levelIndex: 1
+  levelName: 1-2
+  levelTileDatas:
+  - tileIndex: 0
+    prefab: {fileID: 271234327234322469, guid: 940002d6abc59484aa523a9249085583, type: 3}
+    numberOfTriplets: 3
+  - tileIndex: 1
+    prefab: {fileID: 3710746657131885704, guid: 3a289a768ef6fcb47ac7f34a8092a65e,
+      type: 3}
+    numberOfTriplets: 2
+  - tileIndex: 2
+    prefab: {fileID: 6625293745119210415, guid: 41f058624481ab34d9ea538fbd743bfa,
+      type: 3}
+    numberOfTriplets: 1
+  - tileIndex: 3
+    prefab: {fileID: 198947909001859209, guid: 30459a1552e4dc741a799b1bbbd29c22, type: 3}
+    numberOfTriplets: 4
+  - tileIndex: 4
+    prefab: {fileID: 271234327234322469, guid: d40fb86e934e85e49bf72513ba1cdf23, type: 3}
+    numberOfTriplets: 4
