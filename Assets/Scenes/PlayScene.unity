@@ -2656,6 +2656,7 @@ MonoBehaviour:
   inventoryPanel: {fileID: 481406791}
   panelController: {fileID: 85172657}
   inventoryList: []
+  remainTime: 0
 --- !u!1 &1490714748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,7 +3317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000022888, y: 729}
+  m_AnchoredPosition: {x: 0.000022323, y: 574.47}
   m_SizeDelta: {x: 275.4335, y: 108.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850659874
